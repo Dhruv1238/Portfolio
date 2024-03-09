@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ :root {
+  font-family: 'Bebas Neue';
+  overflow: hidden;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -30,4 +30,25 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+} */
+/* 
+html {
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+.stroked-text-black {
+  color: transparent;
+  -webkit-text-stroke: 3px black;
+}
+
+.stroked-text-white {
+  color: transparent;
+  -webkit-text-stroke: 3px white;
 }
