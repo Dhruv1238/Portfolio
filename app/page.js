@@ -203,11 +203,11 @@ export default function Home() {
             <h2 className={css}>veloper</h2>
           </div>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 mt-3">
           <Button
             variant="bordered"
-            className={`rounded-none w-20 ${
-              theme === "dark" ? "border-white" : "border-black"
+            className={`rounded-none w-20 text-xl ${
+              theme === "light" ? "border-black" : "border-white"
             }`}
             size="lg"
           >
@@ -215,8 +215,8 @@ export default function Home() {
           </Button>
           <Button
             variant="bordered"
-            className={`rounded-none w-20 ${
-              theme === "dark" ? "border-white" : "border-black"
+            className={`rounded-none w-20 text-xl ${
+              theme === "light" ? "border-black" : "border-white"
             }`}
             size="lg"
           >
@@ -224,8 +224,8 @@ export default function Home() {
           </Button>
           <Button
             variant="bordered"
-            className={`rounded-none w-20 ${
-              theme === "dark" ? "border-white" : "border-black"
+            className={`rounded-none w-20 text-xl ${
+              theme === "light" ? "border-black" : "border-white"
             }`}
             size="lg"
           >
