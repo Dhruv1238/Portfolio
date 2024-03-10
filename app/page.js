@@ -9,6 +9,7 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
+  Button,
 } from "@nextui-org/react";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
   const { theme } = useTheme();
   const [textColor, setTextColor] = useState("stroked-text-black");
   const [css, setCss] = useState(
-    "text-7xl lg:text-[25vh] text-center leading-none"
+    "text-6xl lg:text-[25vh] text-center leading-none"
   );
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
@@ -34,10 +35,10 @@ export default function Home() {
   useEffect(() => {
     if (hover) {
       setCss(
-        `text-7xl lg:text-[25vh] text-center leading-none z-50 ${textColor}`
+        `text-6xl lg:text-[25vh] text-center leading-none z-50 ${textColor}`
       );
     } else {
-      setCss(`text-7xl lg:text-[25vh] text-center leading-none`);
+      setCss(`text-6xl lg:text-[25vh] text-center leading-none`);
     }
   }, [hover]);
 
@@ -172,7 +173,7 @@ export default function Home() {
         }}
       >
         <h2
-          className="text-7xl lg:text-[25vh] text-center mb-5 lg:mb-0 lg:mt-10"
+          className="text-6xl lg:text-[25vh] text-center mb-5 lg:mb-0 lg:mt-10"
           onMouseEnter={() => {
             setHover(false);
           }}
@@ -187,24 +188,53 @@ export default function Home() {
           onMouseLeave={() => setHover(false)}
         >
           <div className="flex gap-0">
-            <h2 className={`text-7xl lg:text-[25vh] text-center leading-none`}>
+            <h2 className={`text-6xl lg:text-[25vh] text-center leading-none`}>
               FULL
             </h2>
             <h2 className={css}>STACK&nbsp;</h2>
-            <h2 className={`text-7xl lg:text-[25vh] text-center leading-none`}>
+            <h2 className={`text-6xl lg:text-[25vh] text-center leading-none`}>
               WEB-
             </h2>
           </div>
           <div className="flex gap-0">
-            <h2 className={`text-7xl lg:text-[25vh] text-center leading-none`}>
+            <h2 className={`text-6xl lg:text-[25vh] text-center leading-none`}>
               De
             </h2>
             <h2 className={css}>veloper</h2>
           </div>
         </div>
+        <div className="flex flex-col gap-5">
+          <Button
+            variant="bordered"
+            className={`rounded-none w-20 ${
+              theme === "dark" ? "border-white" : "border-black"
+            }`}
+            size="lg"
+          >
+            Projects
+          </Button>
+          <Button
+            variant="bordered"
+            className={`rounded-none w-20 ${
+              theme === "dark" ? "border-white" : "border-black"
+            }`}
+            size="lg"
+          >
+            Experience
+          </Button>
+          <Button
+            variant="bordered"
+            className={`rounded-none w-20 ${
+              theme === "dark" ? "border-white" : "border-black"
+            }`}
+            size="lg"
+          >
+            Resume
+          </Button>
+        </div>
         <img
           src="/dhruv.svg"
-          className="lg:h-[80vh] h-[40vh] object-cover absolute bottom-0"
+          className="lg:h-[75vh] h-[35vh] object-cover absolute bottom-0"
           alt="Dhruv Sharma"
           style={{ transform: `translate(${cursorX}px, ${cursorY}px)` }}
           onMouseEnter={() => {
