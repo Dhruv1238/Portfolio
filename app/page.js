@@ -3,14 +3,25 @@ import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Cursor from "./components/Cursor";
+import { useRouter } from "next/navigation";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/react";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
   const { theme } = useTheme();
   const [textColor, setTextColor] = useState("stroked-text-black");
-  const [css, setCss] = useState("text-[25vh] text-center leading-none");
+  const [css, setCss] = useState(
+    "text-7xl lg:text-[25vh] text-center leading-none"
+  );
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
+
+  const router = useRouter();
 
   useEffect(() => {
     if (theme === "dark") {
@@ -22,39 +33,146 @@ export default function Home() {
 
   useEffect(() => {
     if (hover) {
-      setCss(`text-[25vh] text-center leading-none z-50 ${textColor}`);
+      setCss(
+        `text-7xl lg:text-[25vh] text-center leading-none z-50 ${textColor}`
+      );
     } else {
-      setCss(`text-[25vh] text-center leading-none`);
+      setCss(`text-7xl lg:text-[25vh] text-center leading-none`);
     }
   }, [hover]);
 
   return (
     <>
-    <Cursor />
-      <div className="flex justify-between items-center py-5 p-10 duration-700">
-        <h1 className=" text-3xl">Dhruv Sharma</h1>
+      <Cursor />
+      <div className="flex justify-between items-center p-5 lg:py-5 lg:p-10 duration-700">
+        <Dropdown backdrop="blur" className=" cursor-none">
+          <DropdownTrigger>
+            <h1 className="text-center text-3xl">Dhruv Sharma&#x25BC;</h1>
+          </DropdownTrigger>
+          <DropdownMenu variant="faded" aria-label="Static Actions">
+            <DropdownItem
+              className="cursor-none"
+              endContent={
+                theme === "dark" ? (
+                  <img src="/githubDark.svg" className="h-5 w-5" />
+                ) : (
+                  <img src="/githubLight.svg" className="h-5 w-5" />
+                )
+              }
+              onClick={() =>
+                window.open("https://github.com/dhruv1238", "_blank")
+              }
+            >
+              Github
+            </DropdownItem>
+            <DropdownItem
+              endContent={
+                theme === "dark" ? (
+                  <img src="/linkedinLight.svg" className="h-5 w-5" />
+                ) : (
+                  <img src="/linkedinDark.svg" className="h-5 w-5" />
+                )
+              }
+              className="cursor-none"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/dhruv-sharma-6411a422a/",
+                  "_blank"
+                )
+              }
+            >
+              Linkedin
+            </DropdownItem>
+            <DropdownItem
+              className="cursor-none"
+              endContent={
+                theme === "dark" ? (
+                  <img src="/whatsappDark.svg" className="h-5 w-5" />
+                ) : (
+                  <img src="/whatsappLight.svg" className="h-5 w-5" />
+                )
+              }
+              onClick={() =>
+                window.open(
+                  "https://api.whatsapp.com/send?phone=917304816137",
+                  "_blank"
+                )
+              }
+            >
+              Whatsapp
+            </DropdownItem>
+            <DropdownItem
+              className="cursor-none"
+              endContent={
+                theme === "dark" ? (
+                  <img src="/instaLight.svg" className="h-5 w-5" />
+                ) : (
+                  <img src="/instaDark.svg" className="h-5 w-5" />
+                )
+              }
+              onClick={() =>
+                window.open("https://instagram.com/dhruv1238", "_blank")
+              }
+            >
+              Instagram
+            </DropdownItem>
+            <DropdownItem
+              className="cursor-none"
+              endContent={
+                theme === "dark" ? (
+                  <img src="/mailLight.svg" className="h-5 w-5" />
+                ) : (
+                  <img src="/mailDark.svg" className="h-5 w-5" />
+                )
+              }
+              onClick={() =>
+                (window.location.href = "mailto:dhruv.sharma@somaiya.edu")
+              }
+            >
+              MAIL
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <div className="hidden md:flex items-center justify-between gap-14">
-          <h1 className="text-3xl ease-in-out hover:scale-110 hover:duration-300"          >
+          <h1
+            onClick={() => {
+              router.push("/projects");
+            }}
+            className="text-3xl ease-in-out hover:scale-110 hover:duration-300"
+          >
             Projects
           </h1>
-          <h1 className="text-3xl ease-in-out hover:scale-110 hover:duration-300">
+          <h1
+            onClick={() => {
+              router.push("/experience");
+            }}
+            className="text-3xl ease-in-out hover:scale-110 hover:duration-300"
+          >
             Experience
           </h1>
-          <h1 className="text-3xl ease-in-out hover:scale-110 hover:duration-300">
+          <h1
+            onClick={() => {
+              router.push("/resume");
+            }}
+            className="text-3xl ease-in-out hover:scale-110 hover:duration-300"
+          >
             Resume
           </h1>
           <ThemeSwitcher />
         </div>
+        <div className="md:hidden">
+          <ThemeSwitcher />
+        </div>
       </div>
       <div
-        className="flex flex-col items-center justify-center gap-0 duration-700"
+        className="flex flex-col items-center justify-center lg:gap-10 duration-700"
         onMouseMove={(e) => {
           setCursorX(e.clientX * 0.03);
           setCursorY(e.clientY * 0.03);
         }}
       >
         <h2
-          className="text-[25vh] text-center "
+          className="text-7xl lg:text-[25vh] text-center mb-5 lg:mb-0 lg:mt-10"
           onMouseEnter={() => {
             setHover(false);
           }}
@@ -69,18 +187,24 @@ export default function Home() {
           onMouseLeave={() => setHover(false)}
         >
           <div className="flex gap-0">
-            <h2 className={`text-[25vh] text-center leading-none`}>FULL</h2>
+            <h2 className={`text-7xl lg:text-[25vh] text-center leading-none`}>
+              FULL
+            </h2>
             <h2 className={css}>STACK&nbsp;</h2>
-            <h2 className={`text-[25vh] text-center leading-none`}>WEB-</h2>
+            <h2 className={`text-7xl lg:text-[25vh] text-center leading-none`}>
+              WEB-
+            </h2>
           </div>
           <div className="flex gap-0">
-            <h2 className={`text-[25vh] text-center leading-none`}>De</h2>
+            <h2 className={`text-7xl lg:text-[25vh] text-center leading-none`}>
+              De
+            </h2>
             <h2 className={css}>veloper</h2>
           </div>
         </div>
         <img
           src="/dhruv.svg"
-          className="h-[80vh] object-cover absolute bottom-0"
+          className="lg:h-[80vh] h-[40vh] object-cover absolute bottom-0"
           alt="Dhruv Sharma"
           style={{ transform: `translate(${cursorX}px, ${cursorY}px)` }}
           onMouseEnter={() => {
