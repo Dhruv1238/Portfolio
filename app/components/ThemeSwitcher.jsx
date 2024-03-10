@@ -9,10 +9,10 @@ export function ThemeSwitcher() {
         <div>
             {
                 theme === 'light' ?
-                    <Button variant="light" isIconOnly onClick={() => setTheme('dark')} className="h-10 w-10">
+                    <Button variant="light" isIconOnly onClick={() => setTheme('dark')} className="cursor-none h-10 w-10">
                         <img src="/darkMode.svg" alt="Dark Mode" className="h-7"/>
                     </Button> :
-                    <Button variant="light" isIconOnly onClick={() => setTheme('light')} className="h-10 w-10">
+                    <Button variant="light" isIconOnly onClick={() => setTheme('light')} className="cursor-none h-10 w-10">
                         <img src="/light.svg" alt="Light Mode" className="h-7"/>
                     </Button>
             }

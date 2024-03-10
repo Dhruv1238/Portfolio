@@ -2,6 +2,7 @@
 import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import Cursor from "./components/Cursor";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
@@ -10,8 +11,6 @@ export default function Home() {
   const [css, setCss] = useState("text-[25vh] text-center leading-none");
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
-  const [navItemX, setNavItemsX] = useState(0);
-  const [navItemY, setNavItemsY] = useState(0);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -31,16 +30,17 @@ export default function Home() {
 
   return (
     <>
+    <Cursor />
       <div className="flex justify-between items-center py-5 p-10 duration-700">
         <h1 className=" text-3xl">Dhruv Sharma</h1>
         <div className="hidden md:flex items-center justify-between gap-14">
-          <h1 className="text-3xl ease-in-out cursor-pointer hover:scale-110 hover:duration-300">
+          <h1 className="text-3xl ease-in-out hover:scale-110 hover:duration-300"          >
             Projects
           </h1>
-          <h1 className="text-3xl ease-in-out cursor-pointer hover:scale-110 hover:duration-300">
+          <h1 className="text-3xl ease-in-out hover:scale-110 hover:duration-300">
             Experience
           </h1>
-          <h1 className="text-3xl ease-in-out cursor-pointer hover:scale-110 hover:duration-300">
+          <h1 className="text-3xl ease-in-out hover:scale-110 hover:duration-300">
             Resume
           </h1>
           <ThemeSwitcher />
@@ -53,14 +53,14 @@ export default function Home() {
           setCursorY(e.clientY * 0.03);
         }}
       >
-        <h1
+        <h2
           className="text-[25vh] text-center "
           onMouseEnter={() => {
             setHover(false);
           }}
         >
           SOFTWARE ENGINEER
-        </h1>
+        </h2>
         <div
           className="flex flex-col h-full w-full items-center justify-center"
           onMouseEnter={() => {
@@ -69,13 +69,13 @@ export default function Home() {
           onMouseLeave={() => setHover(false)}
         >
           <div className="flex gap-0">
-            <h1 className={`text-[25vh] text-center leading-none`}>FULL</h1>
-            <h1 className={css}>STACK&nbsp;</h1>
-            <h1 className={`text-[25vh] text-center leading-none`}>WEB-</h1>
+            <h2 className={`text-[25vh] text-center leading-none`}>FULL</h2>
+            <h2 className={css}>STACK&nbsp;</h2>
+            <h2 className={`text-[25vh] text-center leading-none`}>WEB-</h2>
           </div>
           <div className="flex gap-0">
-            <h1 className={`text-[25vh] text-center leading-none`}>De</h1>
-            <h1 className={css}>veloper</h1>
+            <h2 className={`text-[25vh] text-center leading-none`}>De</h2>
+            <h2 className={css}>veloper</h2>
           </div>
         </div>
         <img
