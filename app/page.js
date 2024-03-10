@@ -203,7 +203,7 @@ export default function Home() {
             <h2 className={css}>veloper</h2>
           </div>
         </div>
-        <div className="flex flex-col gap-5 mt-3">
+        <div className="lg:hidden flex flex-col gap-5 mt-3">
           <Button
             variant="bordered"
             className={`rounded-none w-20 text-xl ${
