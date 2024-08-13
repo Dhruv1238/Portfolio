@@ -15,9 +15,9 @@ const Navbar = ({ pageName }) => {
 
     return (
         <div className="flex justify-between items-center p-5 lg:py-5 lg:p-10 duration-700">
-            <Dropdown backdrop="blur" className=" cursor-none">
+            <h1 className="text-center text-3xl">Dhruv Sharma</h1>
+            {/* <Dropdown backdrop="blur" className=" cursor-none">
                 <DropdownTrigger>
-                    <h1 className="text-center text-3xl">Dhruv Sharma&#x25BC;</h1>
                 </DropdownTrigger>
                 <DropdownMenu variant="faded" aria-label="Static Actions">
                     <DropdownItem
@@ -102,7 +102,7 @@ const Navbar = ({ pageName }) => {
                         MAIL
                     </DropdownItem>
                 </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
             <div className="hidden md:flex items-center justify-between gap-14">
                 {page !== "home" ? (
                     <h1
@@ -111,10 +111,10 @@ const Navbar = ({ pageName }) => {
                         }}
                         className={`text-3xl ease-in-out hover:scale-110 hover:duration-300`}
                     >
-                       &#x25C0;
+                        &#x25C0;
                     </h1>
                 ) : (
-                   <></>
+                    <></>
                 )
                 }
                 <h1

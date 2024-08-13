@@ -14,6 +14,7 @@ import {
 import NavBar from "./components/NavBar";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import { QuickContact } from "./components/QuickContack";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
