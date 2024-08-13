@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { Button } from '@nextui-org/react';
 
 export function ThemeSwitcher() {
-    const { theme, setTheme, resolvedTheme } = useTheme();
+    const { setTheme, resolvedTheme } = useTheme();
     const [currentTheme, setCurrentTheme] = useState("light");
 
     useEffect(() => {

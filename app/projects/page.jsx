@@ -22,7 +22,7 @@ export default function Projects() {
         // transition={{ duration: 1, ease: "easeInOut" }}
         >
             <Cursor />
-            <NavBar pageName="projects" />
+            <NavBar />
             <div className="flex flex-col items-center justify-center h-[80vh] gap-4">
                 <h1 className="text-4xl lg:text-[15vh] text-center leading-none">401:Unauthorized</h1>
                 <h1 className="text-4xl lg:text-[10vh] text-center leading-none">Still Under Developement</h1>

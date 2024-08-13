@@ -14,14 +14,16 @@
   src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
 }
 
-.stroked-text-black {
-  color: transparent;
-  -webkit-text-stroke: 3px black;
-}
+@media (min-width: 1024px) {
+  .stroked-text-black {
+    color: transparent;
+    -webkit-text-stroke: 3px black;
+  }
 
-.stroked-text-white {
-  color: transparent;
-  -webkit-text-stroke: 3px white;
+  .stroked-text-white {
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+  }
 }
 
 /* .custom-cursor-black {

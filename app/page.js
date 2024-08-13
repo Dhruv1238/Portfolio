@@ -1,20 +1,15 @@
 "use client";
-import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Cursor from "./components/Cursor";
 import { useRouter } from "next/navigation";
 import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
   Button,
 } from "@nextui-org/react";
 import NavBar from "./components/NavBar";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { QuickContact } from "./components/QuickContack";
+import Image from "next/image";
 
 export default function Home() {
   const [hover, setHover] = useState(false);
@@ -53,7 +48,7 @@ export default function Home() {
     // transition={{ duration: 1, ease: "easeInOut" }}
     >
       <Cursor />
-      <NavBar pageName={"home"} />
+      <NavBar />
       <div
         className="flex flex-col items-center justify-center lg:gap-10 duration-700"
         onMouseMove={(e) => {
@@ -95,9 +90,8 @@ export default function Home() {
         <div className="lg:hidden flex flex-col gap-5 mt-3">
           <Button
             variant="bordered"
-            className={`rounded-none w-20 text-xl ${
-              theme === "light" ? "border-black" : "border-white"
-            }`}
+            className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
+              }`}
             size="lg"
             onClick={() => {
               router.push("/projects");
@@ -107,9 +101,8 @@ export default function Home() {
           </Button>
           <Button
             variant="bordered"
-            className={`rounded-none w-20 text-xl ${
-              theme === "light" ? "border-black" : "border-white"
-            }`}
+            className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
+              }`}
             size="lg"
             onClick={() => {
               router.push("/");
@@ -119,9 +112,8 @@ export default function Home() {
           </Button>
           <Button
             variant="bordered"
-            className={`rounded-none w-20 text-xl ${
-              theme === "light" ? "border-black" : "border-white"
-            }`}
+            className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
+              }`}
             size="lg"
             onClick={() => {
               router.push("/");
@@ -135,10 +127,10 @@ export default function Home() {
           className="lg:h-[75vh] h-[35vh] object-cover absolute bottom-0"
           alt="Dhruv Sharma"
           style={{ transform: `translate(${cursorX}px, ${cursorY}px)` }}
-          onMouseEnter={() => {
-            setHover(true);
-          }}
-        />
+            onMouseEnter={() => {
+              setHover(true);
+            }}
+          />
       </div>
     </motion.div>
   );
