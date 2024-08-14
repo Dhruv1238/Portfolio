@@ -23,8 +23,10 @@ const Navbar = () => {
 
     return (
         <div className="flex justify-between items-center p-5 lg:py-5 lg:p-10 duration-700">
-            <h1 className="text-center text-3xl">Dhruv Sharma</h1>
-            <div className="hidden md:flex items-center justify-between gap-14">
+            <h1 className="text-center text-3xl" onClick={() => {
+                router.push("/");
+            }}>Dhruv Sharma</h1>
+            <div className="hidden lg:flex items-center justify-between gap-14">
                 {page !== "home" ? (
                     <h1
                         onClick={() => {
@@ -64,7 +66,7 @@ const Navbar = () => {
                 </h1>
                 <ThemeSwitcher />
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden">
                 <ThemeSwitcher />
             </div>
         </div>
