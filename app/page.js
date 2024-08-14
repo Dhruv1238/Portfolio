@@ -42,15 +42,14 @@ export default function Home() {
   }, [hover]);
 
   return (
-    <motion.div
-    // initial={{ y: "100%"}}
-    // animate={{ y:"0%" }}
-    // transition={{ duration: 1, ease: "easeInOut" }}
-    >
+    <>
+    {/* initial={{ y: "100%" }}
+    animate={{ y: "0%" }}
+   transition={{ duration: 1, ease: "easeInOut" }} */}
       <Cursor />
       <NavBar />
       <div
-        className="flex flex-col items-center justify-center lg:gap-10 duration-700"
+        className="flex flex-col items-center justify-center lg:gap-10"
         onMouseMove={(e) => {
           setCursorX(e.clientX * 0.03);
           setCursorY(e.clientY * 0.03);
@@ -73,11 +72,11 @@ export default function Home() {
         >
           <div className="flex gap-0">
             <h2 className={`text-6xl lg:text-[25vh] text-center leading-none`}>
-              FULL
+              FU
             </h2>
-            <h2 className={css}>STACK&nbsp;</h2>
+            <h2 className={css}>LL-ST</h2>
             <h2 className={`text-6xl lg:text-[25vh] text-center leading-none`}>
-              WEB-
+              ACK
             </h2>
           </div>
           <div className="flex gap-0">
@@ -127,11 +126,11 @@ export default function Home() {
           className="lg:h-[75vh] h-[35vh] object-cover absolute bottom-0"
           alt="Dhruv Sharma"
           style={{ transform: `translate(${cursorX}px, ${cursorY}px)` }}
-            onMouseEnter={() => {
-              setHover(true);
-            }}
-          />
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+        />
       </div>
-    </motion.div>
+    </>
   );
 }
