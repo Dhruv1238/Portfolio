@@ -142,7 +142,7 @@ const ProjectCorousel = (props) => {
 
             <div className="embla__controls">
                 <div className="embla__buttons">
-                    <div className='flex'>
+                    <div className='hidden lg:flex'>
                         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
                         <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
                     </div>
