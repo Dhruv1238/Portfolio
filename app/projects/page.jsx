@@ -24,7 +24,7 @@ export default function Projects() {
         >
             <Cursor />
             <NavBar />
-            <div className="flex flex-col items-start justify-start h-[90vh] gap-4 p-5 lg:p-10 py-2 duration-700">
+            <div className="flex flex-col items-start justify-start h-[80vh] gap-4 p-5 lg:p-10 py-2 duration-700">
                 <h1 className="lg:text-9xl text-5xl">Things you can expect</h1>
                 {/* <div className='flex flex-row gap-4 items-start justify-between w-full ml-0'> */}
                 <ProjectCorousel slides={SLIDES} options={OPTIONS} />

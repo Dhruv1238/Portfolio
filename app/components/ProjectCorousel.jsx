@@ -100,7 +100,7 @@ const ProjectCorousel = (props) => {
     ];
 
     return (
-        <div className="embla mt-20">
+        <div className="embla">
             <div className="embla__viewport " ref={emblaRef}>
                 <div className="embla__container">
                     {projectData.map((project, index) => (
@@ -142,8 +142,10 @@ const ProjectCorousel = (props) => {
 
             <div className="embla__controls">
                 <div className="embla__buttons">
-                    <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-                    <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+                    <div className='flex'>
+                        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+                        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+                    </div>
                 </div>
 
                 {/* <div className="embla__dots">

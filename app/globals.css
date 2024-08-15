@@ -86,6 +86,7 @@
 .embla {
   max-width: 80vw;
   margin: auto;
+  margin-bottom: 0;
   --slide-height: auto;
   --slide-spacing: 1rem;
   --slide-size: 55%;
