@@ -49,7 +49,7 @@ export default function Home() {
       <Cursor />
       <NavBar />
       <div
-        className="flex flex-col items-center justify-center lg:gap-10"
+        className="flex flex-col items-center justify-center lg:gap-10 duration-700"
         onMouseMove={(e) => {
           setCursorX(e.clientX * 0.03);
           setCursorY(e.clientY * 0.03);
