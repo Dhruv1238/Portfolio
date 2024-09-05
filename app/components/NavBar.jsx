@@ -50,20 +50,20 @@ const Navbar = () => {
                 </h1>
                 <h1
                     onClick={() => {
-                        router.push("/experience");
+                        window.open("https://drive.google.com/file/d/1AhYl5sEV_YZZrJlfgXiAbMWwYMAMqowD/view?usp=sharing", "_blank");
                     }}
                     className={`text-3xl ease-in-out hover:scale-110 hover:duration-300 ${page === "experience" ? "underline" : ""}`}
                 >
                     Experience
                 </h1>
-                <h1
+                {/* <h1
                     onClick={() => {
                         router.push("/resume");
                     }}
                     className={`text-3xl ease-in-out hover:scale-110 hover:duration-300 ${page === "resume" ? "underline" : ""}`}
                 >
                     Resume
-                </h1>
+                </h1> */}
                 <ThemeSwitcher />
             </div>
             <div className="lg:hidden">
