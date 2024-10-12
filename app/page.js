@@ -86,7 +86,7 @@ export default function Home() {
             <h2 className={css}>veloper</h2>
           </div>
         </div>
-        <div className="lg:hidden flex flex-col gap-5 mt-3">
+        <div className="lg:hidden flex flex-col gap-5 mt-7">
           <Button
             variant="bordered"
             className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
@@ -98,7 +98,7 @@ export default function Home() {
           >
             Projects
           </Button>
-          <Button
+          {/* <Button
             variant="bordered"
             className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
               }`}
@@ -108,14 +108,14 @@ export default function Home() {
             }}
           >
             Experience
-          </Button>
+          </Button> */}
           <Button
             variant="bordered"
             className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
               }`}
             size="lg"
             onClick={() => {
-              router.push("/");
+              window.open("https://drive.google.com/file/d/1AhYl5sEV_YZZrJlfgXiAbMWwYMAMqowD/view?usp=sharing", "_blank");
             }}
           >
             Resume

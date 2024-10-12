@@ -29,8 +29,8 @@ export default function Projects() {
                 {/* <div className='flex flex-row gap-4 items-start justify-between w-full ml-0'> */}
                 <ProjectCorousel slides={SLIDES} options={OPTIONS} />
                 {/* </div>     */}
-                <div className="lg:hidden flex flex-row gap-4 items-center justify-between w-full">
-                    <Button
+                <div className="lg:hidden flex flex-row px-5 items-center justify-between w-full">
+                    {/* <Button
                         variant="bordered"
                         className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
                             }`}
@@ -40,7 +40,7 @@ export default function Projects() {
                         }}
                     >
                         Experience
-                    </Button>
+                    </Button> */}
                     <Button
                         variant="bordered"
                         className={`rounded-none w-20 text-xl ${theme === "light" ? "border-black" : "border-white"
@@ -58,7 +58,7 @@ export default function Projects() {
                             }`}
                         size="lg"
                         onClick={() => {
-                            router.push("/");
+                            window.open("https://drive.google.com/file/d/1AhYl5sEV_YZZrJlfgXiAbMWwYMAMqowD/view?usp=sharing", "_blank");
                         }}
                     >
                         Resume
